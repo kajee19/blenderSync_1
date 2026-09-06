@@ -4,14 +4,22 @@
     box-sizing: border-box;
 }
 
+
+/* =========================================================
+   BODY
+========================================================= */
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #080b12;
     color: white;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 
-/* ================= GENERAL ================= */
+/* =========================================================
+   GENERAL
+========================================================= */
 
 .hidden {
     display: none !important;
@@ -19,6 +27,7 @@ body {
 
 .page {
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +42,9 @@ body {
 }
 
 
-/* ================= AUTH ================= */
+/* =========================================================
+   AUTH
+========================================================= */
 
 .auth-container {
     width: 420px;
@@ -74,16 +85,9 @@ body {
 }
 
 
-/* ================= INPUT ================= */
-.input-group input[type="password"] {
-    color: white;
-    background: rgba(255, 255, 255, 0.06);
-}
-
-input[type="password"]::-ms-reveal,
-input[type="password"]::-ms-clear {
-    filter: invert(1);
-}
+/* =========================================================
+   INPUT
+========================================================= */
 
 .input-group {
     margin-bottom: 20px;
@@ -91,8 +95,11 @@ input[type="password"]::-ms-clear {
 
 .input-group label {
     display: block;
+
     margin-bottom: 8px;
+
     color: #b9c1ce;
+
     font-size: 14px;
 }
 
@@ -113,6 +120,18 @@ input[type="password"]::-ms-clear {
     outline: none;
 
     font-size: 15px;
+
+    transition: 0.2s;
+}
+
+.input-group input[type="password"] {
+    color: white;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    filter: invert(1);
 }
 
 .input-group textarea {
@@ -134,7 +153,9 @@ input[type="password"]::-ms-clear {
 }
 
 
-/* ================= BUTTONS ================= */
+/* =========================================================
+   BUTTONS
+========================================================= */
 
 .primary-btn {
     width: 100%;
@@ -186,7 +207,9 @@ input[type="password"]::-ms-clear {
 }
 
 
-/* ================= DASHBOARD ================= */
+/* =========================================================
+   DASHBOARD
+========================================================= */
 
 .dashboard {
     min-height: 100vh;
@@ -197,7 +220,9 @@ input[type="password"]::-ms-clear {
 }
 
 
-/* ================= SIDEBAR ================= */
+/* =========================================================
+   SIDEBAR
+========================================================= */
 
 .sidebar {
     width: 250px;
@@ -206,9 +231,11 @@ input[type="password"]::-ms-clear {
 
     padding: 30px 20px;
 
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-right:
+        1px solid rgba(255, 255, 255, 0.08);
 
-    background: rgba(255, 255, 255, 0.025);
+    background:
+        rgba(255, 255, 255, 0.025);
 
     display: flex;
 
@@ -227,33 +254,75 @@ input[type="password"]::-ms-clear {
     gap: 8px;
 }
 
-.nav-item { 
-    width: 100%; 
+
+/* Sidebar buttons */
+
+.nav-item {
+    width: 100%;
+
     display: flex;
+
     align-items: center;
-    gap: 20px; 
-    padding: 14px; 
-    border: none; 
-    border-radius: 10px; 
-    text-align: left; 
-    color: #8993a5; 
-    background: transparent; 
-    cursor: pointer; 
-    font-size: 15px; 
+
+    gap: 20px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    text-align: left;
+
+    color: #8993a5;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
-.nav-item:hover,
-.nav-item.active {
-    background: rgba(110, 168, 255, 0.12);
+.nav-item i {
+    width: 20px;
+
+    text-align: center;
+
+    font-size: 17px;
+}
+
+.nav-item:hover {
+    background: rgba(110, 168, 255, 0.08);
 
     color: #6ea8ff;
 }
 
+.nav-item.active {
+    background: rgba(110, 168, 255, 0.14);
+
+    color: #6ea8ff;
+
+    box-shadow:
+        inset 3px 0 0 #6ea8ff;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
 .back-btn {
-   width: 100%;
-    margin-top:auto;
-    padding: 12px;
-   
+    width: 100%;
+
+    margin-top: auto;
+
+    padding: 13px;
+
     border: none;
 
     border-radius: 12px;
@@ -270,30 +339,34 @@ input[type="password"]::-ms-clear {
 
     transition: 0.2s;
 }
+
 .back-btn:hover {
     transform: translateY(-2px);
 
     box-shadow:
         0 8px 25px rgba(110, 168, 255, 0.25);
 }
- 
 
 .back-arrow {
-    margin-right:8px;
+    margin-right: 8px;
+
     font-size: 13px;
+
     font-weight: 900;
+
     line-height: 1;
-    
+
     text-shadow:
         1px 0 currentColor,
         -1px 0 currentColor,
         0 1px currentColor,
         0 -1px currentColor;
 }
- 
 
 
-/* ================= MAIN ================= */
+/* =========================================================
+   MAIN
+========================================================= */
 
 .main-content {
     flex: 1;
@@ -301,10 +374,14 @@ input[type="password"]::-ms-clear {
     padding: 35px 45px;
 
     overflow-y: auto;
+
+    min-width: 0;
 }
 
 
-/* ================= TOPBAR ================= */
+/* =========================================================
+   TOPBAR
+========================================================= */
 
 .topbar {
     display: flex;
@@ -352,6 +429,16 @@ input[type="password"]::-ms-clear {
     color: #07101f;
 
     font-weight: bold;
+
+    overflow: hidden;
+}
+
+.avatar img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
 }
 
 .user-profile small {
@@ -363,7 +450,9 @@ input[type="password"]::-ms-clear {
 }
 
 
-/* ================= STATS ================= */
+/* =========================================================
+   STATS
+========================================================= */
 
 .stats {
     display: grid;
@@ -383,13 +472,23 @@ input[type="password"]::-ms-clear {
 
     background: rgba(255, 255, 255, 0.05);
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
 
     display: flex;
 
     align-items: center;
 
     gap: 18px;
+
+    transition: 0.25s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(110, 168, 255, 0.25);
 }
 
 .stat-icon {
@@ -399,7 +498,8 @@ input[type="password"]::-ms-clear {
 
     border-radius: 12px;
 
-    background: rgba(110, 168, 255, 0.12);
+    background:
+        rgba(110, 168, 255, 0.12);
 
     display: flex;
 
@@ -425,7 +525,9 @@ input[type="password"]::-ms-clear {
 }
 
 
-/* ================= PROJECT HEADER ================= */
+/* =========================================================
+   PROJECT HEADER
+========================================================= */
 
 .section-header {
     display: flex;
@@ -450,7 +552,9 @@ input[type="password"]::-ms-clear {
 }
 
 
-/* ================= PROJECT CARDS ================= */
+/* =========================================================
+   PROJECT CARDS
+========================================================= */
 
 .projects-grid {
     display: grid;
@@ -468,7 +572,8 @@ input[type="password"]::-ms-clear {
 
     background: rgba(255, 255, 255, 0.05);
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
 
     transition: 0.25s;
 }
@@ -476,7 +581,8 @@ input[type="password"]::-ms-clear {
 .project-card:hover {
     transform: translateY(-5px);
 
-    border-color: rgba(110, 168, 255, 0.4);
+    border-color:
+        rgba(110, 168, 255, 0.4);
 }
 
 .project-icon {
@@ -486,7 +592,8 @@ input[type="password"]::-ms-clear {
 
     border-radius: 13px;
 
-    background: rgba(110, 168, 255, 0.12);
+    background:
+        rgba(110, 168, 255, 0.12);
 
     display: flex;
 
@@ -522,7 +629,8 @@ input[type="password"]::-ms-clear {
 
     padding-top: 15px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08);
 
     color: #8993a5;
 
@@ -536,7 +644,8 @@ input[type="password"]::-ms-clear {
 
     padding: 10px;
 
-    border: 1px solid rgba(110, 168, 255, 0.3);
+    border:
+        1px solid rgba(110, 168, 255, 0.3);
 
     border-radius: 10px;
 
@@ -545,17 +654,604 @@ input[type="password"]::-ms-clear {
     color: #6ea8ff;
 
     cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.open-project:hover {
+    background:
+        rgba(110, 168, 255, 0.08);
 }
 
 
-/* ================= MODAL ================= */
+/* =========================================================
+   SETTINGS PAGE
+========================================================= */
+
+#settingsSection {
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    padding-bottom: 50px;
+
+    animation:
+        settingsFade 0.35s ease;
+}
+
+
+/* ---------- Header ---------- */
+
+#settingsSection .page-header {
+    margin-bottom: 28px;
+}
+
+#settingsSection .page-header h1 {
+    font-size: 32px;
+
+    font-weight: 700;
+
+    margin: 0 0 7px;
+
+    letter-spacing: -0.5px;
+}
+
+#settingsSection .page-header p {
+    margin: 0;
+
+    color: #8c96a8;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   SETTINGS CARDS
+========================================================= */
+
+.settings-card {
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.18);
+
+    backdrop-filter: blur(18px);
+
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.settings-card:hover {
+    border-color:
+        rgba(110, 168, 255, 0.22);
+
+    transform: translateY(-1px);
+}
+
+.settings-card h2 {
+    margin: 0;
+
+    font-size: 18px;
+
+    font-weight: 650;
+
+    color: #f5f7fb;
+}
+
+.settings-description {
+    margin: 7px 0 24px;
+
+    color: #7f899b;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-edit {
+    display: flex;
+
+    align-items: center;
+
+    gap: 42px;
+}
+
+
+/* ---------- Profile image ---------- */
+
+.profile-picture-area {
+    width: 150px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.profile-picture-area img {
+    width: 110px;
+
+    height: 110px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        3px solid rgba(110, 168, 255, 0.55);
+
+    background: #161b25;
+
+    box-shadow:
+        0 0 0 6px rgba(110, 168, 255, 0.07),
+        0 10px 30px rgba(0, 0, 0, 0.35);
+
+    margin-bottom: 15px;
+}
+
+
+/* ---------- Change photo ---------- */
+
+.change-photo-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 8px 14px;
+
+    border-radius: 8px;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.09);
+
+    color: #b9c2d2;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.change-photo-btn::before {
+    content: "\f030";
+
+    font-family:
+        "Font Awesome 6 Free";
+
+    font-weight: 900;
+
+    margin-right: 7px;
+}
+
+.change-photo-btn:hover {
+    background:
+        rgba(110, 168, 255, 0.13);
+
+    border-color:
+        rgba(110, 168, 255, 0.35);
+
+    color: #6ea7ff;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PROFILE FORM
+========================================================= */
+
+.profile-form {
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 18px;
+
+    row-gap: 0;
+}
+
+
+/* Labels */
+
+.profile-form label {
+    display: block;
+
+    color: #aab4c5;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+
+/* Inputs */
+
+.profile-form input {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 12px 14px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.09);
+
+    background:
+        rgba(0, 0, 0, 0.20);
+
+    color: #f2f5fa;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.profile-form input::placeholder {
+    color: #596477;
+}
+
+.profile-form input:focus {
+    border-color:
+        rgba(110, 168, 255, 0.55);
+
+    background:
+        rgba(110, 168, 255, 0.035);
+
+    box-shadow:
+        0 0 0 3px rgba(110, 168, 255, 0.08);
+}
+
+.profile-form input:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+
+/* Name */
+
+.profile-form label:nth-of-type(1) {
+    grid-column: 1;
+
+    grid-row: 1;
+}
+
+.profile-form input:nth-of-type(1) {
+    grid-column: 1;
+
+    grid-row: 2;
+
+    margin-bottom: 20px;
+}
+
+
+/* Email */
+
+.profile-form label:nth-of-type(2) {
+    grid-column: 2;
+
+    grid-row: 1;
+}
+
+.profile-form input:nth-of-type(2) {
+    grid-column: 2;
+
+    grid-row: 2;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
+
+.save-settings-btn {
+    grid-column: 1 / -1;
+
+    justify-self: start;
+
+    padding: 11px 20px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #6ea8ff;
+
+    color: #07101f;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 20px rgba(80, 140, 240, 0.18);
+
+    transition: 0.2s;
+}
+
+.save-settings-btn:hover {
+    background: #82b3ff;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 10px 25px rgba(80, 140, 240, 0.25);
+}
+
+.save-settings-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   NOTIFICATIONS
+========================================================= */
+
+.setting-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 17px 18px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.055);
+}
+
+.setting-row strong {
+    display: block;
+
+    color: #e9edf5;
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+.setting-row p {
+    margin: 0;
+
+    color: #707b8e;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   NOTIFICATION TOGGLE
+========================================================= */
+
+.switch {
+    position: relative;
+
+    width: 50px;
+
+    height: 28px;
+
+    flex-shrink: 0;
+}
+
+.switch input {
+    opacity: 0;
+
+    width: 0;
+
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+
+    inset: 0;
+
+    cursor: pointer;
+
+    background: #303746;
+
+    border-radius: 30px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    transition: 0.25s;
+}
+
+.slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+
+    height: 20px;
+
+    left: 3px;
+
+    top: 3px;
+
+    border-radius: 50%;
+
+    background: #c5ccd8;
+
+    transition: 0.25s;
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.switch input:checked + .slider {
+    background: #5f9df7;
+
+    border-color: #70aaff;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(22px);
+
+    background: white;
+}
+
+
+/* =========================================================
+   APPEARANCE
+========================================================= */
+
+.theme-buttons {
+    display: flex;
+
+    width: fit-content;
+
+    padding: 4px;
+
+    gap: 4px;
+
+    border-radius: 11px;
+
+    background:
+        rgba(0, 0, 0, 0.20);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+/* Theme button */
+
+.theme-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-width: 110px;
+
+    padding: 10px 16px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #7f899a;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.theme-btn:hover {
+    color: #dce4f0;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+}
+
+.theme-btn.active {
+    background: #202b3d;
+
+    color: #72aaff;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================================
+   SETTINGS ANIMATION
+========================================================= */
+
+@keyframes settingsFade {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
 
 .modal {
     position: fixed;
 
     inset: 0;
 
-    background: rgba(0, 0, 0, 0.65);
+    background:
+        rgba(0, 0, 0, 0.65);
 
     display: flex;
 
@@ -573,7 +1269,8 @@ input[type="password"]::-ms-clear {
 
     background: #111722;
 
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border:
+        1px solid rgba(255, 255, 255, 0.1);
 
     border-radius: 20px;
 
@@ -609,7 +1306,224 @@ input[type="password"]::-ms-clear {
 }
 
 
-/* ================= RESPONSIVE ================= */
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+body.light-theme {
+    background: #f4f6fa;
+
+    color: #151a23;
+}
+
+
+/* Dashboard */
+
+body.light-theme .dashboard {
+    background: #f4f6fa;
+}
+
+body.light-theme .sidebar {
+    background: #ffffff;
+
+    border-right-color:
+        rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .sidebar-logo {
+    color: #171c25;
+}
+
+body.light-theme .nav-item {
+    color: #667085;
+}
+
+body.light-theme .nav-item:hover {
+    background: #f0f4fa;
+
+    color: #347eea;
+}
+
+body.light-theme .nav-item.active {
+    background: #edf4ff;
+
+    color: #347eea;
+}
+
+
+/* Main text */
+
+body.light-theme .topbar h2,
+body.light-theme .section-header h2 {
+    color: #171c25;
+}
+
+body.light-theme .topbar p,
+body.light-theme .section-header p {
+    color: #727d8e;
+}
+
+
+/* Stats */
+
+body.light-theme .stat-card {
+    background: #ffffff;
+
+    border-color:
+        rgba(0, 0, 0, 0.07);
+
+    box-shadow:
+        0 8px 25px rgba(30, 40, 60, 0.05);
+}
+
+body.light-theme .stat-card span {
+    color: #727d8e;
+}
+
+
+/* Projects */
+
+body.light-theme .project-card {
+    background: #ffffff;
+
+    border-color:
+        rgba(0, 0, 0, 0.07);
+
+    box-shadow:
+        0 8px 25px rgba(30, 40, 60, 0.05);
+}
+
+body.light-theme .project-card p {
+    color: #727d8e;
+}
+
+body.light-theme .project-info {
+    border-top-color:
+        rgba(0, 0, 0, 0.07);
+}
+
+
+/* Settings */
+
+body.light-theme #settingsSection .page-header p {
+    color: #727d8e;
+}
+
+body.light-theme .settings-card {
+    background:
+        rgba(255, 255, 255, 0.9);
+
+    border-color:
+        rgba(0, 0, 0, 0.07);
+
+    box-shadow:
+        0 10px 30px rgba(30, 40, 60, 0.08);
+}
+
+body.light-theme .settings-card h2 {
+    color: #171c25;
+}
+
+body.light-theme .settings-description {
+    color: #727d8e;
+}
+
+body.light-theme .profile-form label {
+    color: #606b7d;
+}
+
+body.light-theme .profile-form input {
+    background: #f8f9fb;
+
+    border-color: #dce1e8;
+
+    color: #1c222d;
+}
+
+body.light-theme .profile-form input:focus {
+    background: white;
+
+    border-color: #76a9ed;
+}
+
+body.light-theme .setting-row {
+    background: #f7f8fa;
+
+    border-color: #e5e8ed;
+}
+
+body.light-theme .setting-row strong {
+    color: #252b35;
+}
+
+body.light-theme .setting-row p {
+    color: #7a8494;
+}
+
+body.light-theme .theme-buttons {
+    background: #edf0f4;
+
+    border-color: #dfe3e8;
+}
+
+body.light-theme .theme-btn {
+    color: #707b8c;
+}
+
+body.light-theme .theme-btn:hover {
+    background: #e4e8ee;
+
+    color: #347eea;
+}
+
+body.light-theme .theme-btn.active {
+    background: white;
+
+    color: #347eea;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .change-photo-btn {
+    background: #f0f2f6;
+
+    border-color: #dce1e8;
+
+    color: #596577;
+}
+
+body.light-theme .change-photo-btn:hover {
+    background: #e8f1ff;
+
+    color: #347eea;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .profile-edit {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+    }
+
+    .profile-picture-area {
+        width: 100%;
+    }
+
+    .profile-form {
+        width: 100%;
+    }
+
+}
+
 
 @media (max-width: 800px) {
 
@@ -632,7 +1546,27 @@ input[type="password"]::-ms-clear {
     .nav-item {
         font-size: 0;
 
+        justify-content: center;
+
         text-align: center;
+
+        gap: 0;
+    }
+
+    .nav-item i {
+        font-size: 18px;
+    }
+
+    .nav-item.active {
+        box-shadow: none;
+    }
+
+    .back-btn {
+        font-size: 0;
+    }
+
+    .back-btn i {
+        font-size: 16px;
     }
 
     .main-content {
@@ -643,4 +1577,86 @@ input[type="password"]::-ms-clear {
         grid-template-columns: 1fr;
     }
 
-} 
+    .topbar {
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .main-content {
+        padding: 20px 15px;
+    }
+
+    .topbar h2 {
+        font-size: 24px;
+    }
+
+    .user-profile {
+        display: none;
+    }
+
+    #settingsSection .page-header h1 {
+        font-size: 27px;
+    }
+
+    .settings-card {
+        padding: 20px;
+    }
+
+    .profile-form {
+        display: flex;
+
+        flex-direction: column;
+    }
+
+    .profile-form label {
+        margin-top: 10px;
+    }
+
+    .profile-form input {
+        margin-bottom: 10px;
+    }
+
+    .save-settings-btn {
+        margin-top: 10px;
+    }
+
+    .setting-row {
+        gap: 15px;
+    }
+
+    .theme-buttons {
+        width: 100%;
+    }
+
+    .theme-btn {
+        flex: 1;
+
+        min-width: 0;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .sidebar {
+        width: 60px;
+
+        padding: 20px 7px;
+    }
+
+    .main-content {
+        padding: 20px 12px;
+    }
+
+    .settings-card {
+        padding: 17px;
+    }
+
+}

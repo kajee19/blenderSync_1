@@ -129,27 +129,39 @@
 
             <nav>
 
-                <button class="nav-item active">
-                    <i class="fa-solid fa-gauge-high"></i>
-                     Dashboard
-                </button>
+    <button
+        class="nav-item active"
+        onclick="showSection('dashboard')"
+    >
+        <i class="fa-solid fa-gauge-high"></i>
+        Dashboard
+    </button>
 
-                <button class="nav-item">
-                    <i class="fa-solid fa-folder"></i>
-                     My Projects
-                </button>
+    <button
+        class="nav-item"
+        onclick="showSection('projects')"
+    >
+        <i class="fa-solid fa-folder"></i>
+        My Projects
+    </button>
 
-                <button class="nav-item">
-                    <i class="fa-solid fa-users"></i>
-                     Team
-                </button>
+    <button
+        class="nav-item"
+        onclick="showSection('team')"
+    >
+        <i class="fa-solid fa-users"></i>
+        Team
+    </button>
 
-                <button class="nav-item">
-                    <i class="fa-solid fa-gear"></i>
-                    Settings
-                </button>
+    <button
+        class="nav-item"
+        onclick="showSection('settings')"
+    >
+        <i class="fa-solid fa-gear"></i>
+        Settings
+    </button>
 
-            </nav>
+</nav>
 
             <button onclick="goBack()" class="back-btn">
                 <i class="fa-solid fa-arrow-left"></i>
@@ -240,6 +252,152 @@
                 <!-- Projects will appear here -->
 
             </div>
+
+
+            <!-- ================= SETTINGS SECTION ================= -->
+
+            <section id="settingsSection" class="content-section hidden">
+
+                <div class="page-header">
+
+                    <div>
+                        <h1>Settings</h1>
+
+                        <p>
+                            Manage your profile and application preferences.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- ================= PROFILE ================= -->
+
+                <div class="settings-card">
+
+                    <h2>Profile</h2>
+
+                    <p class="settings-description">
+                        Update your profile information.
+                    </p>
+
+
+                    <div class="profile-edit">
+
+                        <!-- Profile Picture -->
+
+                        <div class="profile-picture-area">
+
+                            <img id="settingsProfileImage" src="https://via.placeholder.com/110" alt="Profile Picture">
+
+                            <label for="profileImageInput" class="change-photo-btn">
+                                Change Photo
+                            </label>
+
+                            <input type="file" id="profileImageInput" accept="image/*" hidden>
+
+                        </div>
+
+
+                        <!-- Profile Information -->
+
+                        <div class="profile-form">
+
+                            <label for="profileName">
+                                Name
+                            </label>
+
+                            <input type="text" id="profileName" placeholder="Enter your name">
+
+
+                            <label for="profileEmail">
+                                Email
+                            </label>
+
+                            <input type="email" id="profileEmail" disabled>
+
+
+                            <button type="button" class="save-settings-btn" onclick="saveProfile()">
+                                Save Changes
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= NOTIFICATIONS ================= -->
+
+                <div class="settings-card">
+
+                    <h2>Notifications</h2>
+
+                    <p class="settings-description">
+                        Control how BlendSync notifies you.
+                    </p>
+
+
+                    <div class="setting-row">
+
+                        <div>
+
+                            <strong>
+                                Notifications
+                            </strong>
+
+                            <p>
+                                Receive project and team notifications.
+                            </p>
+
+                        </div>
+
+
+                        <label class="switch">
+
+                            <input type="checkbox" id="notificationToggle" onchange="saveNotificationSetting()">
+
+                            <span class="slider"></span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= APPEARANCE ================= -->
+
+                <div class="settings-card">
+
+                    <h2>Appearance</h2>
+
+                    <p class="settings-description">
+                        Choose how BlendSync looks.
+                    </p>
+
+
+                    <div class="theme-buttons">
+
+                        <button type="button" id="lightThemeBtn" class="theme-btn" onclick="setTheme('light')">
+                            <i class="fa-solid fa-sun"></i>
+                            Bright
+                        </button>
+
+
+                        <button type="button" id="darkThemeBtn" class="theme-btn" onclick="setTheme('dark')">
+                            <i class="fa-solid fa-moon"></i>
+                            Dark
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
 
         </main>
 
