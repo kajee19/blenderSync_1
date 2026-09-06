@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BlendSync</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= LOGIN PAGE ================= -->
+
+    <section id="loginPage" class="page">
+
+        <div class="auth-container">
+
+            <div class="logo">
+                <span>◆</span> BlendSync
+            </div>
+
+            <h1>Welcome Back</h1>
+
+            <p class="subtitle">
+                Collaborate on 3D projects with your team.
+            </p>
+
+            <form id="loginForm">
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" class="primary-btn">
+                    Login
+                </button>
+
+            </form>
+
+            <p class="switch-text">
+                Don't have an account?
+                <button onclick="showRegister()" class="link-btn">
+                    Create Account
+                </button>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= REGISTER PAGE ================= -->
+
+    <section id="registerPage" class="page hidden">
+
+        <div class="auth-container">
+
+            <div class="logo">
+                <span>◆</span> BlendSync
+            </div>
+
+            <h1>Create Account</h1>
+
+            <p class="subtitle">
+                Start collaborating on 3D projects.
+            </p>
+
+            <form id="registerForm">
+
+                <div class="input-group">
+                    <label>Username</label>
+                    <input type="text" id="registerUsername" placeholder="Enter username" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" id="registerEmail" placeholder="Enter email" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="registerPassword" placeholder="Create password" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm password" required>
+                </div>
+
+                <button type="submit" class="primary-btn">
+                    Create Account
+                </button>
+
+            </form>
+
+            <p class="switch-text">
+                Already have an account?
+                <button onclick="showLogin()" class="link-btn">
+                    Login
+                </button>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section id="dashboardPage" class="dashboard hidden">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <span>◆</span> BlendSync
+            </div>
+
+            <nav>
+
+                <button class="nav-item active">
+                    <i class="fa-solid fa-gauge-high"></i>
+                     Dashboard
+                </button>
+
+                <button class="nav-item">
+                    <i class="fa-solid fa-folder"></i>
+                     My Projects
+                </button>
+
+                <button class="nav-item">
+                    <i class="fa-solid fa-users"></i>
+                     Team
+                </button>
+
+                <button class="nav-item">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </button>
+
+            </nav>
+
+            <button onclick="goBack()" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back</span>
+            </button>
+
+        </aside>
+
+
+        <!-- Main Content -->
+
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+                    <h2>Dashboard</h2>
+                    <p>Welcome back to BlendSync.</p>
+                </div>
+
+                <div class="user-profile">
+                    <div class="avatar">K</div>
+
+                    <div>
+                        <strong id="usernameDisplay">
+                            User
+                        </strong>
+
+                        <small>online</small>
+                    </div>
+                </div>
+
+            </header>
+
+
+            <!-- Statistics -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <div class="stat-icon">📁</div>
+
+                    <div>
+                        <span>Projects</span>
+                        <strong id="projectCount">0</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+
+                    <div>
+                        <span>Collaborators</span>
+                        <strong>0</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🟢</div>
+
+                    <div>
+                        <span>Online</span>
+                        <strong>1</strong>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Projects -->
+
+            <div class="section-header">
+
+                <div>
+                    <h2>My Projects</h2>
+                    <p>Your collaborative 3D projects</p>
+                </div>
+
+                <button onclick="openProjectModal()" class="primary-btn create-btn">
+                    + Create Project
+                </button>
+
+            </div>
+
+
+            <div id="projectsContainer" class="projects-grid">
+
+                <!-- Projects will appear here -->
+
+            </div>
+
+        </main>
+
+    </section>
+
+
+    <!-- ================= CREATE PROJECT MODAL ================= -->
+
+    <div id="projectModal" class="modal hidden">
+
+        <div class="modal-box">
+
+            <button onclick="closeProjectModal()" class="close-btn">
+                ×
+            </button>
+
+            <h2>Create New Project</h2>
+
+            <p>
+                Start a new collaborative 3D project.
+            </p>
+
+            <form id="projectForm">
+
+                <div class="input-group">
+
+                    <label>Project Name</label>
+
+                    <input type="text" id="projectName" placeholder="Example: Fantasy World" required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Description</label>
+
+                    <textarea id="projectDescription" placeholder="Describe your project..."></textarea>
+
+                </div>
+
+                <button type="submit" class="primary-btn">
+                    Create Project
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
